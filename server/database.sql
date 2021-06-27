@@ -1,1 +1,1 @@
-CREATE DATABASE pernstack
+CREATE DATABASE pernstack;
