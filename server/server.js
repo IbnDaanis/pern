@@ -7,6 +7,15 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+app.get('/todos', async (req, res) => {
+  try {
+    const allTodos = (await pool.query('SELECT * FROM todo')).rows
+    res.json(allTodos)
+  } catch (error) {
+    console.error(error.message)
+  }
+})
+
 app.post('/todos', async (req, res) => {
   try {
     const { description } = req.body
