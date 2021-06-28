@@ -3,7 +3,7 @@ import { InputTodo } from './components/InputTodo'
 
 export const App = () => {
   return (
-    <div>
+    <div className='container'>
       <InputTodo />
     </div>
   )
