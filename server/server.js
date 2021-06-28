@@ -16,6 +16,16 @@ app.get('/todos', async (req, res) => {
   }
 })
 
+app.get('/todos/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const todo = (await pool.query('SELECT * FROM todo WHERE todo_id = $1', [id])).rows[0]
+    res.json(todo)
+  } catch (error) {
+    console.error(error.message)
+  }
+})
+
 app.post('/todos', async (req, res) => {
   try {
     const { description } = req.body
