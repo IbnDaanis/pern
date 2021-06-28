@@ -13,6 +13,7 @@ app.get('/todos', async (req, res) => {
     res.json(allTodos)
   } catch (error) {
     console.error(error.message)
+    res.json(error.message)
   }
 })
 
@@ -23,6 +24,7 @@ app.get('/todos/:id', async (req, res) => {
     res.json(todo)
   } catch (error) {
     console.error(error.message)
+    res.json(error.message)
   }
 })
 
@@ -36,6 +38,7 @@ app.post('/todos', async (req, res) => {
     res.json(newTodo)
   } catch (error) {
     console.error(error.message)
+    res.json(error.message)
   }
 })
 
@@ -53,6 +56,7 @@ app.put('/todos/:id', async (req, res) => {
     res.json(updateTodo)
   } catch (error) {
     console.error(error.message)
+    res.json(error.message)
   }
 })
 
@@ -64,6 +68,7 @@ app.delete('/todos/:id', async (req, res) => {
     res.json('Todo was deleted')
   } catch (error) {
     console.error(error.message)
+    res.json(error.message)
   }
 })
 
