@@ -41,7 +41,7 @@ export const TodoList = () => {
             <tr key={todo.todo_id}>
               <th scope='row'>{todo.description}</th>
               <td>
-                <EditTodo id={todo.todo_id} />
+                <EditTodo todo={todo} />
               </td>
               <td>
                 <button className='btn btn-danger' onClick={() => handleDelete(todo.todo_id)}>
