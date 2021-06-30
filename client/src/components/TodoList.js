@@ -19,6 +19,7 @@ export const TodoList = () => {
       await fetch(`http://localhost:5000/todos/${id}`, {
         method: 'DELETE'
       })
+      setTodos(prev => prev.filter(todo => todo.todo_id !== id))
     } catch (error) {
       console.error(error.message)
     }
