@@ -14,6 +14,16 @@ export const TodoList = () => {
     getTodos()
   }, [])
 
+  const handleDelete = async id => {
+    try {
+      await fetch(`http://localhost:5000/todos/${id}`, {
+        method: 'DELETE'
+      })
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
+
   return (
     <>
       <table className='table mt-5'>
@@ -29,7 +39,11 @@ export const TodoList = () => {
             <tr key={todo.todo_id}>
               <th scope='row'>{todo.description}</th>
               <td>Edit</td>
-              <td>Delete</td>
+              <td>
+                <button className='btn btn-danger' onClick={() => handleDelete(todo.todo_id)}>
+                  Delete
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
