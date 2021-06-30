@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { EditTodo } from './EditTodo'
 
 export const TodoList = () => {
   const [todos, setTodos] = useState([])
@@ -39,7 +40,9 @@ export const TodoList = () => {
           {todos?.map(todo => (
             <tr key={todo.todo_id}>
               <th scope='row'>{todo.description}</th>
-              <td>Edit</td>
+              <td>
+                <EditTodo />
+              </td>
               <td>
                 <button className='btn btn-danger' onClick={() => handleDelete(todo.todo_id)}>
                   Delete
