@@ -13,6 +13,7 @@ export const InputTodo = () => {
         body: JSON.stringify(body)
       })
       setDescription('')
+      window.location = '/'
     } catch (error) {
       console.error(error.message)
     }
